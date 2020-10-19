@@ -19,29 +19,30 @@ import './App.css';
 function App() {
   return (
     <>
-      <Router>
-        <Route path='/:page' component={Header} />
-        <Switch>
-          {/* nav links */}
-          <Route path='/feed' component={Feed} />
-          <Route path='/about' component={About} />
-          <Route path='/blog' exact component={Blog} />
-          <Route path='/blog/:post' component={BlogPost} />
-          <Route path='/portfolio' exact component={Portfolio} />
-          <Route path='/portfolio/:piece' component={PortfolioPiece} />
-          <Route path='/resources' component={Resources} />
-          <Route path='/contact' component={Contact} />
-          <Route path='/admin/:action' component={AdminAction} />
+      <div className='Content'>
+        <Router>
+          <Route path='/:page' component={Header} />
+          <Switch>
+            {/* nav links */}
+            <Route path='/feed' component={Feed} />
+            <Route path='/about' component={About} />
+            <Route path='/blog' exact component={Blog} />
+            <Route path='/blog/:post' component={BlogPost} />
+            <Route path='/portfolio' exact component={Portfolio} />
+            <Route path='/portfolio/:piece' component={PortfolioPiece} />
+            <Route path='/resources' component={Resources} />
+            <Route path='/contact' component={Contact} />
+            <Route path='/admin/:action' component={AdminAction} />
 
-          {/* direct routes */}
-          <Route path='/' exact component={Home} />
-          <Route path='/email-list' component={Freelancer} />
-          <Route path='/freelancer' component={Freelancer} />
-          <Route path='/admin' exact component={Admin} />
-        </Switch>
-      </Router>
-
-      <Footer />
+            {/* direct routes */}
+            <Route path='/' exact component={Home} />
+            <Route path='/email-list' component={Freelancer} />
+            <Route path='/freelancer' component={Freelancer} />
+            <Route path='/admin' exact component={Admin} />
+          </Switch>
+        </Router>
+      </div>
+      <Footer className='Footer' />
     </>
   );
 }
